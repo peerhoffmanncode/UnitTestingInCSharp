@@ -1,4 +1,5 @@
 using CalcLibProj;
+using FluentAssertions;
 using Xunit.Abstractions;
 
 namespace CalcLibProj.Tets.Unit;
@@ -29,8 +30,7 @@ public class CalculatorTests : IAsyncLifetime
         var result = _systemUnderTest.Add(n1, n2);
 
         // Assert
-        Assert.Equal(expected, result);
-
+        result.Should().Be(expected);
         _testOutputHelper.WriteLine($"Hello from Add_ShouldAddTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
 
@@ -44,7 +44,7 @@ public class CalculatorTests : IAsyncLifetime
         var result = _systemUnderTest.Sub(n1, n2);
 
         // Assert
-        Assert.Equal(expected, result);
+        result.Should().Be(expected);
 
         _testOutputHelper.WriteLine($"Hello from Subtract_ShouldSubtractTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
@@ -59,7 +59,7 @@ public class CalculatorTests : IAsyncLifetime
         var result = _systemUnderTest.Mul(n1, n2);
 
         // Assert
-        Assert.Equal(expected, result);
+        result.Should().Be(expected);
 
         _testOutputHelper.WriteLine($"Hello from Multiply_ShouldMultiplyTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
@@ -74,7 +74,7 @@ public class CalculatorTests : IAsyncLifetime
         var result = _systemUnderTest.Div(n1, n2);
 
         // Assert
-        Assert.Equal(expected, result);
+        result.Should().Be(expected);
 
         _testOutputHelper.WriteLine($"Hello from Divide_ShouldDivideTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
