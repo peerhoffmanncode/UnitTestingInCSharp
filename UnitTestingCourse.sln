@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcLibPRoj", "CalcLibPRoj\CalcLibPRoj.csproj", "{D606E121-4C7F-4283-80BA-CC6C15E7F6D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcLibProj.Tets.Unit", "CalcLibProj.Tets.Unit\CalcLibProj.Tets.Unit.csproj", "{FC00DF69-691C-42A4-BB06-8D7B34B2E928}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SRC", "SRC", "{B27C2A61-8A5E-4DE5-BB42-4B019DA46392}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TESTS", "TESTS", "{0D732F38-2870-43F5-8B34-2E23085278A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D606E121-4C7F-4283-80BA-CC6C15E7F6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D606E121-4C7F-4283-80BA-CC6C15E7F6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D606E121-4C7F-4283-80BA-CC6C15E7F6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D606E121-4C7F-4283-80BA-CC6C15E7F6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC00DF69-691C-42A4-BB06-8D7B34B2E928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC00DF69-691C-42A4-BB06-8D7B34B2E928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC00DF69-691C-42A4-BB06-8D7B34B2E928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC00DF69-691C-42A4-BB06-8D7B34B2E928}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D606E121-4C7F-4283-80BA-CC6C15E7F6D3} = {B27C2A61-8A5E-4DE5-BB42-4B019DA46392}
+		{FC00DF69-691C-42A4-BB06-8D7B34B2E928} = {0D732F38-2870-43F5-8B34-2E23085278A6}
+	EndGlobalSection
+EndGlobal
