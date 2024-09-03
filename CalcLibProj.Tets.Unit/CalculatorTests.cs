@@ -19,37 +19,75 @@ public class CalculatorTests : IAsyncLifetime
     }
 
 
-    [Fact]
-    public void Add_ShouldAddTwoNumbers_WhenToNumbersAreIntegers()
+    [Theory]
+    [InlineData(5, 4, 9)]
+    [InlineData(1, 1, 2)]
+    [InlineData(-1, 1, 0)]
+    public void Add_ShouldAddTwoNumbers_WhenToNumbersAreIntegers(int n1, int n2, int expected)
     {
         // Act
-        var result = _systemUnderTest.Add(5, 4);
+        var result = _systemUnderTest.Add(n1, n2);
 
         // Assert
-        Assert.Equal(9, result);
+        Assert.Equal(expected, result);
 
-        _testOutputHelper.WriteLine("Hello from Add_ShouldAddTwoNumbers_WhenToNumbersAreIntegers...");
+        _testOutputHelper.WriteLine($"Hello from Add_ShouldAddTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
 
-    [Fact]
-    public void Subtract_ShouldSubtractTwoNumbers_WhenToNumbersAreIntegers()
+    [Theory]
+    [InlineData(5, 4, 1)]
+    [InlineData(1, 1, 0)]
+    [InlineData(-1, 1, -2, Skip = "Unneeded test in this stage!")]
+    public void Subtract_ShouldSubtractTwoNumbers_WhenToNumbersAreIntegers(int n1, int n2, int expected)
     {
         // Act
-        var result = _systemUnderTest.Sub(5, 4);
+        var result = _systemUnderTest.Sub(n1, n2);
 
         // Assert
-        Assert.Equal(1, result);
+        Assert.Equal(expected, result);
 
-        _testOutputHelper.WriteLine("Hello from Subtract_ShouldSubtractTwoNumbers_WhenToNumbersAreIntegers...");
+        _testOutputHelper.WriteLine($"Hello from Subtract_ShouldSubtractTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
+    }
+    
+    [Theory]
+    [InlineData(5, 4, 20)]
+    [InlineData(1, 1, 1)]
+    [InlineData(-1, 1, -1)]
+    public void Multiply_ShouldMultiplyTwoNumbers_WhenToNumbersAreIntegers(int n1, int n2, int expected)
+    {
+        // Act
+        var result = _systemUnderTest.Mul(n1, n2);
+
+        // Assert
+        Assert.Equal(expected, result);
+
+        _testOutputHelper.WriteLine($"Hello from Multiply_ShouldMultiplyTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
+    }
+    
+    [Theory]
+    [InlineData(4, 2, 2)]
+    [InlineData(1, 1, 1)]
+    [InlineData(-1, 1, -1)]
+    public void Divide_ShouldDivideTwoNumbers_WhenToNumbersAreIntegers(int n1, int n2, int expected)
+    {
+        // Act
+        var result = _systemUnderTest.Div(n1, n2);
+
+        // Assert
+        Assert.Equal(expected, result);
+
+        _testOutputHelper.WriteLine($"Hello from Divide_ShouldDivideTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
 
-    public async Task InitializeAsync()
+    public Task InitializeAsync()
     {
         _testOutputHelper.WriteLine("Hello from async setup ...");
+        return Task.CompletedTask;
     }
 
-    public async Task DisposeAsync()
+    public Task DisposeAsync()
     {
         _testOutputHelper.WriteLine("Hello from teardown!...");
+        return Task.CompletedTask;
     }
 }
