@@ -79,6 +79,18 @@ public class CalculatorTests : IAsyncLifetime
         _testOutputHelper.WriteLine($"Hello from Divide_ShouldDivideTwoNumbers_WhenToNumbersAreIntegers({n1}, {n2}, {expected})...");
     }
 
+    [Fact]
+    public void Divide_ShouldThrowError_WhenToNumbersAreIntegersAndDivideByZero()
+    {
+        // Act
+        var result = () => _systemUnderTest.Div(1, 0);
+
+        // Assert
+        result.Should().Throw<DivideByZeroException>();
+
+        _testOutputHelper.WriteLine($"Hello from Divide_ShouldDivideTwoNumbers_WhenToNumbersAreIntegers(0,1,ERROR)...");
+    }
+    
     public Task InitializeAsync()
     {
         _testOutputHelper.WriteLine("Hello from async setup ...");
